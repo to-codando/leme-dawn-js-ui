@@ -1,5 +1,5 @@
 {
-  "name": "app-hello",
+  "name": "leme-dawn-js-ui",
   "version": "1.0.0",
   "description": "",
   "main": "./src/main.js",
@@ -12,6 +12,7 @@
       "esbuild.config.js"
     ]
   },
+  "private": true,
   "scripts": {
     "lint": "standard --fix",
     "copy": "shx cp ./index.html ./dist/index.html",
@@ -47,6 +48,8 @@
     "watch": "^1.0.2"
   },
   "dependencies": {
+    "dawn-js-core": "workspace:^0.0.12",
+    "dawn-js-ui": "workspace:*",
     "lemejs": "^6.1.9"
   }
 }

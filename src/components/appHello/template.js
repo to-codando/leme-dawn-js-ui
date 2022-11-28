@@ -8,6 +8,7 @@ export default ({ state, html }) => {
         <img src="${bannerLemeJs}" alt="Leme Js" class="banner" />
       </p>
       <app-text></app-text>
+      <div data-component="ds-name"></div>
       <a href="#/xxx">Go to other page!!!</a>
     </div>
   `

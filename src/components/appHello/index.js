@@ -1,4 +1,6 @@
 import { observerFactory } from 'lemejs'
+import { dawnJS } from 'dawn-js-core'
+import { input } from 'dawn-js-ui'
 
 import { appText } from '../appText'
 
@@ -13,11 +15,23 @@ const appHello = () => {
 
   const children = () => ({ appText })
 
+  const hooks = () => ({
+    afterOnInit
+  })
+
+  const afterOnInit = ({ queryOnce }) => {
+    const dsName = queryOnce('[data-component=ds-name]')
+    const appInputName = dawnJS.component.create(input)
+    appInputName.register(dsName)
+    appInputName.init()
+  }
+
   return {
     state,
     template,
     styles,
-    children
+    children,
+    hooks
   }
 }
 
