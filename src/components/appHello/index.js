@@ -1,6 +1,5 @@
 import { observerFactory } from 'lemejs'
-import { dawnJS } from 'dawn-js-core'
-import { input } from 'dawn-js-ui'
+import { appInput } from 'dawn-js-ui'
 
 import { appText } from '../appText'
 
@@ -19,11 +18,10 @@ const appHello = () => {
     afterOnInit
   })
 
-  const afterOnInit = ({ queryOnce }) => {
-    const dsName = queryOnce('[data-component=ds-name]')
-    const appInputName = dawnJS.component.create(input)
-    appInputName.register(dsName)
-    appInputName.init()
+  const afterOnInit = ({ appElement, queryOnce }) => {
+    appInput.register('ds-name', appElement)
+    appInput.props.set({ label: 'Nome' })
+    appInput.init()
   }
 
   return {
