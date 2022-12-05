@@ -21,7 +21,7 @@
     "start": "pnpm run api && pnpm run dev && pnpm run copy & npx http-server dist & pnpm run serve",
     "prod": "pnpm run build && pnpm copy",
     "api": "json-server --watch api/db.json",
-    "serve": "watch 'pnpm run lint & pnpm run dev && pnpm run copy' src",
+    "serve": "watch 'pnpm run lint & pnpm run dev & pnpm run copy' src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "lint-staged": {
@@ -48,7 +48,7 @@
     "watch": "^1.0.2"
   },
   "dependencies": {
-    "dawn-js-core": "workspace:^0.0.12",
+    "dawn-js-core": "workspace:*",
     "dawn-js-ui": "workspace:*",
     "lemejs": "^6.1.9"
   }
